@@ -392,6 +392,23 @@ Possíveis evoluções para o projeto:
 
 ---
 
+# 🔧 Troubleshooting
+
+Documentação de troubleshooting:
+
+docs/troubleshooting/common-issues.md
+
+Contém procedimentos para diagnóstico de:
+
+- Pods
+- Services
+- Ingress
+- Prometheus
+- Grafana
+- Recursos do Cluster
+
+---
+
 # 📚 Referências
 
 * Kubernetes — https://kubernetes.io
