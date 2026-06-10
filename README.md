@@ -34,7 +34,7 @@ A implementação demonstra conceitos essenciais utilizados em ambientes corpora
 
 # 🏗️ Arquitetura
 
-```## Arquitetura Visual
+## Arquitetura Visual
 
 ![Platform Architecture](docs/screenshots/platform-architecture.png)
 
