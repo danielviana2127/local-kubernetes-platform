@@ -34,7 +34,7 @@ A implementação demonstra conceitos essenciais utilizados em ambientes corpora
 
 # 🏗️ Arquitetura
 
-```<img src="docs/screenshots/platform-architecture.png" width="100%">
+```/home/daniel-viana/local-kubernetes-platform/docs/screenshots/platform-architecture.png
 ```
 
 ### Documentação complementar
