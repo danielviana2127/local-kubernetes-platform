@@ -34,41 +34,7 @@ A implementação demonstra conceitos essenciais utilizados em ambientes corpora
 
 # 🏗️ Arquitetura
 
-```text
-                    +------------------+
-                    |      Usuário     |
-                    +---------+--------+
-                              |
-                              v
-                    +------------------+
-                    |  NGINX Ingress   |
-                    +---------+--------+
-                              |
-                              v
-                    +------------------+
-                    |  NGINX Service   |
-                    +---------+--------+
-                              |
-                              v
-                    +------------------+
-                    |    NGINX Pods    |
-                    +------------------+
-
-                    +------------------+
-                    |    Prometheus    |
-                    +---------+--------+
-                              |
-                +-------------+-------------+
-                |                           |
-                v                           v
-      +-------------------+      +------------------+
-      | kube-state-metrics|      |  Node Exporter   |
-      +-------------------+      +------------------+
-                              |
-                              v
-                    +------------------+
-                    |     Grafana      |
-                    +------------------+
+```<img src="docs/screenshots/platform-architecture.png" width="100%">
 ```
 
 ### Documentação complementar
@@ -181,6 +147,7 @@ https://grafana.com/grafana/dashboards/15757-kubernetes-views-pods/
 | Métricas dos Nós       | Node Exporter      |
 | Controle de Versão     | Git                |
 | Hospedagem de Código   | GitHub             |
+| Metricas Kubernetes    | Metrics Server     |
 
 ---
 
@@ -372,6 +339,10 @@ Dashboards utilizados:
 * Infraestrutura como Código
 * DevOps
 * Platform Engineering
+* Metrics Server
+* Capacity Planning
+* Resource Monitoring
+* Performance Analysis
 
 ---
 
