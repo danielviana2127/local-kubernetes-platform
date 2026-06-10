@@ -51,6 +51,7 @@ docs/architecture/architecture.md
 # 📊 Dashboards
 
 Para monitoramento da plataforma foram utilizados dashboards amplamente adotados pela comunidade Kubernetes e Grafana.
+![Grafana Cluster](docs/screenshots/grafana-k8s-cluster.png)
 
 ---
 
