@@ -1,166 +1,68 @@
 # 🚀 Local Kubernetes Platform
 
-![Status](https://img.shields.io/badge/Status-Concluído-success)
+![Status](https://img.shields.io/badge/Status-Conclu%C3%ADdo-success)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-v1.35-blue)
 ![Docker](https://img.shields.io/badge/Docker-29.x-blue)
 ![Prometheus](https://img.shields.io/badge/Prometheus-Monitoring-orange)
 ![Grafana](https://img.shields.io/badge/Grafana-Dashboards-orange)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-Plataforma Kubernetes local construída com **Minikube**, **NGINX Ingress Controller**, **Prometheus** e **Grafana**, demonstrando práticas modernas de **DevOps**, **Observabilidade** e **Platform Engineering**.
+Plataforma Kubernetes local construída com **Minikube**, **NGINX Ingress Controller**, **Prometheus** e **Grafana**, demonstrando práticas de **DevOps**, **Observabilidade** e **Platform Engineering**.
 
 ---
 
-# 📖 Sobre o Projeto
+## 📖 Sobre o Projeto
 
-Este projeto foi desenvolvido com o objetivo de simular uma plataforma Kubernetes completa em ambiente local, permitindo o deploy de aplicações, exposição de serviços através de Ingress e monitoramento da infraestrutura utilizando Prometheus e Grafana.
+Este projeto simula uma plataforma Kubernetes em ambiente local: deploy de aplicações, exposição de serviços através de Ingress e monitoramento da infraestrutura com Prometheus e Grafana.
 
-A implementação demonstra conceitos essenciais utilizados em ambientes corporativos e plataformas cloud-native.
+## 🎯 Objetivos
 
----
-
-# 🎯 Objetivos
-
-* Implantar aplicações em Kubernetes
-* Configurar Namespaces para isolamento de recursos
-* Expor aplicações utilizando NGINX Ingress Controller
-* Aplicar Requests e Limits de CPU e Memória
-* Implementar monitoramento com Prometheus
-* Visualizar métricas utilizando Grafana
-* Demonstrar automação através de scripts
-* Aplicar boas práticas de organização de projetos DevOps
+- Implantar aplicações em Kubernetes
+- Configurar Namespaces para isolamento de recursos
+- Expor aplicações utilizando NGINX Ingress Controller
+- Aplicar Requests e Limits de CPU e Memória
+- Configurar probes de readiness e liveness
+- Implementar monitoramento com Prometheus
+- Visualizar métricas utilizando Grafana
+- Automatizar a implantação através de scripts
 
 ---
 
-# 🏗️ Arquitetura
-
-## Arquitetura Visual
+## 🏗️ Arquitetura
 
 ![Platform Architecture](docs/screenshots/platform-architecture.png)
 
-### Documentação complementar
-
-📄 Consulte também:
-
-```text
-docs/architecture/architecture.md
-```
+Diagramas detalhados em [`docs/architecture/architecture.md`](docs/architecture/architecture.md).
 
 ---
 
-# 📊 Dashboards
-
-Para monitoramento da plataforma foram utilizados dashboards amplamente adotados pela comunidade Kubernetes e Grafana.
-![Grafana Cluster](docs/screenshots/grafana-k8s-cluster.png)
-
----
-
-## Node Exporter Full
-
-Dashboard para monitoramento detalhado dos recursos do sistema operacional.
-
-Dashboard Oficial:
-
-https://grafana.com/grafana/dashboards/1860-node-exporter-full/
-
-### Métricas monitoradas
-
-* CPU
-* Memória
-* Disco
-* Rede
-* Sistema Operacional
-
-<img src="docs/screenshots/grafana-node-exporter.png" width="100%">
-
----
-
-## Kubernetes Cluster Monitoring
-
-Dashboard utilizado para visualização geral do cluster Kubernetes.
-
-Dashboard Oficial:
-
-https://grafana.com/grafana/dashboards/7249-kubernetes-cluster-monitoring/
-
-### Métricas monitoradas
-
-* Saúde do Cluster
-* Consumo de Recursos
-* Estado dos Workloads
-* Componentes Kubernetes
-
-<img src="docs/screenshots/grafana-k8s-cluster.png" width="100%">
-
----
-
-## Kubernetes Views - Nodes
-
-Dashboard para monitoramento dos nós do cluster.
-
-Dashboard Oficial:
-
-https://grafana.com/grafana/dashboards/15759-kubernetes-views-nodes/
-
-### Métricas monitoradas
-
-* CPU por Nó
-* Memória por Nó
-* Pods por Nó
-* Utilização de Recursos
-
-<img src="docs/screenshots/grafana-k8s-nodes.png" width="100%">
-
----
-
-## Kubernetes Views - Pods
-
-Dashboard para monitoramento dos Pods e Containers.
-
-Dashboard Oficial:
-
-https://grafana.com/grafana/dashboards/15757-kubernetes-views-pods/
-
-### Métricas monitoradas
-
-* Consumo de CPU
-* Consumo de Memória
-* Reinicializações
-* Estado dos Pods
-* Containers em execução
-
-<img src="docs/screenshots/grafana-k8s-pods.png" width="100%">
-
----
-
-# 🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 | Categoria              | Tecnologia         |
 | ---------------------- | ------------------ |
 | Sistema Operacional    | Ubuntu 26.04 LTS   |
 | Containers             | Docker             |
 | Cluster Kubernetes     | Minikube           |
-| Orquestração           | Kubernetes         |
 | Gerenciador de Pacotes | Helm               |
 | Ingress Controller     | NGINX Ingress      |
 | Monitoramento          | Prometheus         |
 | Visualização           | Grafana            |
 | Métricas do Cluster    | kube-state-metrics |
 | Métricas dos Nós       | Node Exporter      |
-| Controle de Versão     | Git                |
-| Hospedagem de Código   | GitHub             |
-| Metricas Kubernetes    | Metrics Server     |
+| Métricas de Recursos   | Metrics Server     |
+| Controle de Versão     | Git / GitHub       |
 
 ---
 
-# 📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto
 
-```text
+```
 .
 ├── docs
 │   ├── architecture
 │   │   └── architecture.md
 │   └── screenshots
+│       ├── platform-architecture.png
 │       ├── grafana-k8s-cluster.png
 │       ├── grafana-k8s-nodes.png
 │       ├── grafana-k8s-pods.png
@@ -173,7 +75,7 @@ https://grafana.com/grafana/dashboards/15757-kubernetes-views-pods/
 │   │   └── nginx-ingress.yaml
 │   ├── monitoring
 │   │   ├── grafana
-│   │   ├── prometheus
+│   │   └── prometheus
 │   ├── namespaces
 │   │   └── development-namespace.yaml
 │   └── services
@@ -181,75 +83,32 @@ https://grafana.com/grafana/dashboards/15757-kubernetes-views-pods/
 │
 ├── scripts
 │   ├── deploy.sh
-│   └── destroy.sh
+│   ├── destroy.sh
+│   └── install-monitoring.sh
 │
-├── terraform
-│   ├── helm
-│   ├── kind-cluster
-│   └── kubernetes-resources
-│
-├── README.md
 ├── LICENSE
+├── README.md
 └── .gitignore
 ```
 
 ---
 
-# ☸️ Recursos Kubernetes
+## ☸️ Recursos Kubernetes
 
-### Namespace
+| Recurso    | Nome               | Detalhes                                                                  |
+| ---------- | ------------------ | ------------------------------------------------------------------------- |
+| Namespace  | `development`      | Isolamento da aplicação                                                   |
+| Deployment | `nginx-deployment` | 2 réplicas, RollingUpdate, requests/limits, readiness e liveness probes   |
+| Service    | `nginx-service`    | Tipo ClusterIP, porta 80                                                  |
+| Ingress    | `nginx-ingress`    | Host `local-app.dev`, classe `nginx`                                      |
 
-```text
-development
-```
-
-### Deployment
-
-```text
-nginx-deployment
-```
-
-Características:
-
-* 2 Réplicas
-* Rolling Update
-* Resource Requests
-* Resource Limits
-
-### Service
-
-```text
-nginx-service
-```
-
-Tipo:
-
-```text
-ClusterIP
-```
-
-### Ingress
-
-```text
-nginx-ingress
-```
-
-Host configurado:
-
-```text
-local-app.dev
-```
-
----
-
-# ⚙️ Gerenciamento de Recursos
+### Gerenciamento de Recursos
 
 ```yaml
 resources:
   requests:
     cpu: "100m"
     memory: "128Mi"
-
   limits:
     cpu: "250m"
     memory: "256Mi"
@@ -257,43 +116,92 @@ resources:
 
 ---
 
-# 🚀 Implantação
+## ✅ Pré-requisitos
 
-## Criar Namespace
-
-```bash
-kubectl apply -f kubernetes/namespaces/development-namespace.yaml
-```
-
-## Implantar Aplicação
-
-```bash
-kubectl apply -f kubernetes/deployments/nginx-deployment.yaml
-```
-
-## Criar Service
-
-```bash
-kubectl apply -f kubernetes/services/nginx-service.yaml
-```
-
-## Criar Ingress
-
-```bash
-kubectl apply -f kubernetes/ingress/nginx-ingress.yaml
-```
+- Docker
+- [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+- [Helm](https://helm.sh/docs/intro/install/)
 
 ---
 
-# 🤖 Scripts de Automação
+## 🚀 Como Executar
 
-## Deploy Completo
+### 1. Iniciar o cluster
+
+```bash
+minikube start --driver=docker
+```
+
+### 2. Clonar o repositório
+
+```bash
+git clone https://github.com/danielviana2127/local-kubernetes-platform.git
+cd local-kubernetes-platform
+```
+
+### 3. Implantar a aplicação
+
+O script habilita o NGINX Ingress, aplica os manifests e aguarda o deployment ficar pronto:
 
 ```bash
 ./scripts/deploy.sh
 ```
 
-## Remover Recursos
+Para aplicar manualmente, na ordem:
+
+```bash
+kubectl apply -f kubernetes/namespaces/
+kubectl apply -f kubernetes/deployments/
+kubectl apply -f kubernetes/services/
+kubectl apply -f kubernetes/ingress/
+```
+
+### 4. Acessar a aplicação
+
+Adicione o host ao `/etc/hosts`:
+
+```bash
+echo "$(minikube ip) local-app.dev" | sudo tee -a /etc/hosts
+```
+
+Teste:
+
+```bash
+curl http://local-app.dev
+```
+
+> **Driver Docker:** se o IP do Minikube não for acessível, rode `minikube tunnel` em outro terminal e use `127.0.0.1 local-app.dev` no `/etc/hosts`.
+>
+> **Navegador:** o domínio `.dev` força HTTPS nos navegadores. Para testar via navegador, use `curl` ou troque o host por `local-app.local` no Ingress.
+
+### 5. Instalar o monitoramento
+
+```bash
+./scripts/install-monitoring.sh
+```
+
+O script habilita o Metrics Server e instala o `kube-prometheus-stack` (Prometheus, Grafana, kube-state-metrics e node-exporter) no namespace `monitoring`.
+
+Acessar o Grafana:
+
+```bash
+kubectl port-forward -n monitoring svc/monitoring-grafana 3000:80
+```
+
+Abra `http://localhost:3000` (usuário `admin`). Senha:
+
+```bash
+kubectl get secret -n monitoring monitoring-grafana -o jsonpath="{.data.admin-password}" | base64 -d; echo
+```
+
+Acessar o Prometheus:
+
+```bash
+kubectl port-forward -n monitoring svc/monitoring-kube-prometheus-prometheus 9090:9090
+```
+
+### 6. Remover os recursos
 
 ```bash
 ./scripts/destroy.sh
@@ -301,107 +209,103 @@ kubectl apply -f kubernetes/ingress/nginx-ingress.yaml
 
 ---
 
-# 📈 Monitoramento
+## 📊 Dashboards
 
-### Prometheus
+Dashboards da comunidade importados no Grafana (**Dashboards → New → Import**, informando o ID):
 
-Responsável pela coleta de métricas de:
+| Dashboard                     | ID    | Link                                                                    |
+| ----------------------------- | ----- | ----------------------------------------------------------------------- |
+| Node Exporter Full            | 1860  | https://grafana.com/grafana/dashboards/1860-node-exporter-full/         |
+| Kubernetes Cluster Monitoring | 7249  | https://grafana.com/grafana/dashboards/7249-kubernetes-cluster-monitoring/ |
+| Kubernetes Views - Nodes      | 15759 | https://grafana.com/grafana/dashboards/15759-kubernetes-views-nodes/    |
+| Kubernetes Views - Pods       | 15757 | https://grafana.com/grafana/dashboards/15757-kubernetes-views-pods/     |
 
-* Kubernetes
-* kube-state-metrics
-* node-exporter
-* Serviços monitorados
+### Kubernetes Cluster Monitoring
 
-### Grafana
+Saúde do cluster, consumo de recursos, estado dos workloads e componentes Kubernetes.
 
-Responsável pela visualização das métricas através de dashboards interativos.
+![Grafana Cluster](docs/screenshots/grafana-k8s-cluster.png)
 
-Dashboards utilizados:
+### Node Exporter Full
 
-* Node Exporter Full
-* Kubernetes Cluster Monitoring
-* Kubernetes Views Nodes
-* Kubernetes Views Pods
+CPU, memória, disco, rede e sistema operacional.
 
----
+![Node Exporter](docs/screenshots/grafana-node-exporter.png)
 
-# 💡 Competências Demonstradas
+### Kubernetes Views - Nodes
 
-* Kubernetes
-* Docker
-* Minikube
-* Helm
-* NGINX Ingress Controller
-* Kubernetes Networking
-* Resource Management
-* Prometheus
-* Grafana
-* Observabilidade
-* Monitoramento
-* Infraestrutura como Código
-* DevOps
-* Platform Engineering
-* Metrics Server
-* Capacity Planning
-* Resource Monitoring
-* Performance Analysis
+CPU, memória e pods por nó, e utilização de recursos.
+
+![Kubernetes Nodes](docs/screenshots/grafana-k8s-nodes.png)
+
+### Kubernetes Views - Pods
+
+Consumo de CPU e memória, reinicializações, estado dos pods e containers em execução.
+
+![Kubernetes Pods](docs/screenshots/grafana-k8s-pods.png)
 
 ---
 
-# 🔮 Próximos Passos
+## 🔧 Troubleshooting
 
-Possíveis evoluções para o projeto:
-
-* ArgoCD
-* GitOps
-* Horizontal Pod Autoscaler (HPA)
-* Certificados TLS
-* Loki
-* Promtail
-* Centralização de Logs
-* GitHub Actions
-* CI/CD
-* Ambientes Dev, Homologação e Produção
+| Sintoma                                  | Verificação                                                                            |
+| ---------------------------------------- | -------------------------------------------------------------------------------------- |
+| Pods não iniciam                         | `kubectl get pods -n development` e `kubectl describe pod <pod> -n development`        |
+| Aplicação não responde                   | `kubectl get endpoints nginx-service -n development` (vazio = selector não confere)    |
+| Ingress sem endereço ou erro 404/503     | `kubectl get pods -n ingress-nginx` e `kubectl describe ingress nginx-ingress -n development` |
+| `local-app.dev` não resolve              | Confira a linha no `/etc/hosts` e, com driver Docker, rode `minikube tunnel`           |
+| Grafana sem dados                        | Em **Connections → Data sources**, teste o Prometheus; confira `kubectl get pods -n monitoring` |
+| `kubectl top` falha                      | `minikube addons enable metrics-server` e aguarde 1–2 minutos                          |
 
 ---
 
-# 🔧 Troubleshooting
+## 💡 Competências Demonstradas
 
-Documentação de troubleshooting:
-
-docs/troubleshooting/common-issues.md
-
-Contém procedimentos para diagnóstico de:
-
-- Pods
-- Services
-- Ingress
-- Prometheus
-- Grafana
-- Recursos do Cluster
+- Kubernetes (Deployments, Services, Ingress, Namespaces)
+- Docker e Minikube
+- Helm
+- NGINX Ingress Controller
+- Gerenciamento de recursos (requests e limits) e health probes
+- Prometheus, Grafana e Observabilidade
+- Metrics Server
+- Automação com Shell Script
+- DevOps e Platform Engineering
 
 ---
 
-# 📚 Referências
+## 🔮 Próximos Passos
 
-* Kubernetes — https://kubernetes.io
-* Minikube — https://minikube.sigs.k8s.io
-* Docker — https://www.docker.com
-* Helm — https://helm.sh
-* Prometheus — https://prometheus.io
-* Grafana — https://grafana.com
-* NGINX Ingress Controller — https://kubernetes.github.io/ingress-nginx
-* Node Exporter — https://github.com/prometheus/node_exporter
-* kube-state-metrics — https://github.com/kubernetes/kube-state-metrics
+- GitHub Actions: validação dos manifests (kubeconform)
+- Horizontal Pod Autoscaler (HPA)
+- Certificados TLS
+- ArgoCD e GitOps
+- Loki e Promtail para centralização de logs
+- Alertas no Prometheus (Alertmanager)
+- Ambientes Dev, Homologação e Produção
 
 ---
 
-# 👨‍💻 Autor
+## 📚 Referências
+
+- [Kubernetes](https://kubernetes.io)
+- [Minikube](https://minikube.sigs.k8s.io)
+- [Docker](https://www.docker.com)
+- [Helm](https://helm.sh)
+- [Prometheus](https://prometheus.io)
+- [Grafana](https://grafana.com)
+- [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx)
+- [kube-prometheus-stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)
+- [Node Exporter](https://github.com/prometheus/node_exporter)
+- [kube-state-metrics](https://github.com/kubernetes/kube-state-metrics)
+
+---
+
+## 👨‍💻 Autor
 
 **Daniel Viana**
 
-* GitHub: https://github.com/danielviana2127
-* LinkedIn: https://linkedin.com/in/daniel-viana-devops
+- GitHub: <https://github.com/danielviana2127>
+- LinkedIn: <https://linkedin.com/in/daniel-viana-devops>
 
 Profissional em transição para as áreas de DevOps, Cloud Computing e Platform Engineering, com experiência em infraestrutura, suporte técnico e projetos práticos utilizando Kubernetes, Docker, Prometheus, Grafana e automação.
 
