@@ -1,0 +1,55 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  shellcheck:
+    name: Shellcheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verificar sintaxe dos scripts (bash -n)
+        run: |
+          for f in scripts/*.sh; do
+            echo "Verificando $f"
+            bash -n "$f"
+          done
+
+      - name: Rodar ShellCheck
+        run: shellcheck scripts/*.sh
+
+  kubeconform:
+    name: Validate Kubernetes manifests
+    runs-on: ubuntu-latest
+    env:
+      KUBECONFORM_VERSION: v0.6.7
+      KUBERNETES_VERSION: 1.31.0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Instalar kubeconform
+        run: |
+          curl -sSL "https://github.com/yannh/kubeconform/releases/download/${KUBECONFORM_VERSION}/kubeconform-linux-amd64.tar.gz" | tar xz
+          sudo mv kubeconform /usr/local/bin/
+          kubeconform -v
+
+      - name: Validar manifests
+        run: |
+          kubeconform \
+            -strict \
+            -summary \
+            -kubernetes-version "${KUBERNETES_VERSION}" \
+            kubernetes/namespaces \
+            kubernetes/deployments \
+            kubernetes/services \
+            kubernetes/ingress
